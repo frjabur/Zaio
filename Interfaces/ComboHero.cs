@@ -290,7 +290,7 @@ namespace Zaio.Interfaces
         {
             if (_executed && Target != null && Target.IsAlive && MyHero.IsAlive)
             {
-                Drawing.DrawText($"Killing {Game.Localize(Target.Name)}", Game.MouseScreenPosition + new Vector2(28, 5),
+                Drawing.DrawText($"", Game.MouseScreenPosition + new Vector2(28, 5),
                     new Vector2(24, 200), Color.Red, FontFlags.AntiAlias | FontFlags.DropShadow);
             }
         }
