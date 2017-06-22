@@ -286,6 +286,13 @@ namespace Zaio.Interfaces
             DestroyAttackEffect();
         }
 
+        public virtual void OnDraw()
+        {
+            if (_executed && Target != null && Target.IsAlive && MyHero.IsAlive)
+            {
+                Drawing.DrawText($"Killing {Game.Localize(Target.Name)}", Game.MouseScreenPosition + new Vector2(28, 5),
+                    new Vector2(24, 200), Color.Red, FontFlags.AntiAlias | FontFlags.DropShadow);
+            }
         }
 
         protected override async Task Execute(CancellationToken token)
@@ -708,4 +715,4 @@ namespace Zaio.Interfaces
             return false;
         }
     }
-
+}
