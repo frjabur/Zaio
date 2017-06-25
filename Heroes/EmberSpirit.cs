@@ -260,9 +260,9 @@ var stacks = mod?.StackCount;
                         var radius = _ultAbility.GetAbilityData("radius");
                         var remnant = Remnants.FirstOrDefault(unit => unit.Distance2D(target) < radius);
                         
- if (stacks > 0)
+ //if (stacks > 0)
                         
-                        // if (remnant == null)
+                        if (remnant == null)
                         {
                             Log.Debug("Remnant: "+stacks);
                             _ultAbility.UseAbility(predictedPos);
