@@ -272,6 +272,7 @@ var stacks = stackis?.StackCount;
                         }
                         else
                         {
+                        if (stacks > 0)
                             Log.Debug($"already got a remnant near the enemy PogChamp to approach!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
