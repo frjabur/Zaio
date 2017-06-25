@@ -262,7 +262,7 @@ var stacks = mod?.StackCount;
                         
  //if (stacks > 0)
                         
-                        if (remnant == null)
+                        if (remnant == null) && (stacks > 0)
                         {
                             Log.Debug("Remnant: "+stacks);
                             _ultAbility.UseAbility(predictedPos);
@@ -273,7 +273,7 @@ var stacks = mod?.StackCount;
                             Log.Debug($"already got a remnant near the enemy PogChamp to approach!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
-                        await Await.Delay(10, tk);
+                        await Await.Delay(100, tk);
                         return;
                     }
                 }
