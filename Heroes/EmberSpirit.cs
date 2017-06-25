@@ -259,7 +259,7 @@ namespace Zaio.Heroes
                         if (remnant == null)
                         {
                             Log.Debug($"placing remnant first to approach!");
-                            _ultAbility.UseAbility(predictedPos);
+                            _ultAbility.UseAbility(predictedPos)*CurrentRemnants;
                             await Await.Delay((int) (time + Game.Ping), tk);
                         }
                         else
