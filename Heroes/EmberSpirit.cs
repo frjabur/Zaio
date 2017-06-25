@@ -252,14 +252,20 @@ namespace Zaio.Heroes
                         var speed = MyHero.MovementSpeed * (_ultAbility.GetAbilityData("speed_multiplier") / 100);
                         var time = (castPoint + target.Distance2D(MyHero) / speed) * 1000.0f;
                         var predictedPos = Prediction.Prediction.PredictPosition(target, (int) time);
+                        
+var mod = Me.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
+var stacks = mod?.StackCount;
 
                         // test if we already got a remnant near the enemy
                         var radius = _ultAbility.GetAbilityData("radius");
                         var remnant = Remnants.FirstOrDefault(unit => unit.Distance2D(target) < radius);
-                        if (remnant == null)
+                        
+ if (stacks > 0)
+                        
+                        // if (remnant == null)
                         {
-                            Log.Debug($"placing remnant first to approach!");
-                            _ultAbility.UseAbility(predictedPos)*CurrentRemnants;
+                            Log.Debug("Remnant: "+stacks);
+                            _ultAbility.UseAbility(predictedPos);
                             await Await.Delay((int) (time + Game.Ping), tk);
                         }
                         else
