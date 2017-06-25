@@ -246,15 +246,15 @@ namespace Zaio.Heroes
                 if (!IsInRange(MyHero.AttackRange * 2.0f) && !target.IsMagicImmune())
                 {
                     if (_ultAbility.IsAbilityEnabled() && _ultAbility.CanBeCasted() && _ultActivateAbility.CanBeCasted() &&
-                        (MinimumRemnants == 0 || MinimumRemnants < CurrentRemnants))
+                        (CurrentRemnants))
                     {
                         var castPoint = _ultAbility.FindCastPoint();
                         var speed = MyHero.MovementSpeed * (_ultAbility.GetAbilityData("speed_multiplier") / 100);
                         var time = (castPoint + target.Distance2D(MyHero) / speed) * 1000.0f;
                         var predictedPos = Prediction.Prediction.PredictPosition(target, (int) time);
                         
-var mod = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
-var stacks = mod?.StackCount;
+var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
+var stacks = stackis?.StackCount;
 
                         // test if we already got a remnant near the enemy
                         var radius = _ultAbility.GetAbilityData("radius");
@@ -266,7 +266,7 @@ var stacks = mod?.StackCount;
                         {
                             Log.Debug($"Remnant: "+stacks);
                             _ultAbility.UseAbility(predictedPos);
-                            //await Await.Delay((int) (time + Game.Ping), tk);
+                            await Await.Delay((int) (time + Game.Ping), tk);
                         }
                         else
                         {
