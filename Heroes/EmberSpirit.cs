@@ -273,7 +273,7 @@ var stacks = mod?.StackCount;
                             Log.Debug($"already got a remnant near the enemy PogChamp to approach!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
-                        await Await.Delay(100, tk);
+                        await Await.Delay(10, tk);
                         return;
                     }
                 }
