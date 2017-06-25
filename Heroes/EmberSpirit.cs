@@ -309,6 +309,9 @@ var stacks = stackis?.StackCount;
                         var speed = MyHero.MovementSpeed * (_ultAbility.GetAbilityData("speed_multiplier") / 100);
                         var time = (castPoint + target.Distance2D(MyHero) / speed) * 1000.0f;
                         var predictedPos = Prediction.Prediction.PredictPosition(target, (int) time);
+                        
+ var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
+var stacks = stackis?.StackCount;
 
                         // test if we already got a remnant near the enemy
                         var radius = _ultAbility.GetAbilityData("radius");
