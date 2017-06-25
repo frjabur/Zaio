@@ -246,7 +246,7 @@ namespace Zaio.Heroes
                 if (!IsInRange(MyHero.AttackRange * 2.0f) && !target.IsMagicImmune())
                 {
                     if (_ultAbility.IsAbilityEnabled() && _ultAbility.CanBeCasted() && _ultActivateAbility.CanBeCasted() &&
-                        (CurrentRemnants))
+                        (MinimumRemnants == 3 || MinimumRemnants < CurrentRemnants))
                     {
                         var castPoint = _ultAbility.FindCastPoint();
                         var speed = MyHero.MovementSpeed * (_ultAbility.GetAbilityData("speed_multiplier") / 100);
