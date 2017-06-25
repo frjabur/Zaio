@@ -262,11 +262,11 @@ var stacks = mod?.StackCount;
                         
  //if (stacks > 0)
                         
-                        if (remnant == null) && (stacks > 0)
+                        if (remnant == null)
                         {
-                            Log.Debug("Remnant: "+stacks);
+                            Log.Debug($"Remnant: "+stacks);
                             _ultAbility.UseAbility(predictedPos);
-                            await Await.Delay((int) (time + Game.Ping), tk);
+                            //await Await.Delay((int) (time + Game.Ping), tk);
                         }
                         else
                         {
