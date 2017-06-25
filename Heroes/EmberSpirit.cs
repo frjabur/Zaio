@@ -246,7 +246,7 @@ namespace Zaio.Heroes
                 if (!IsInRange(MyHero.AttackRange * 2.0f) && !target.IsMagicImmune())
                 {
                     if (_ultAbility.IsAbilityEnabled() && _ultAbility.CanBeCasted() && _ultActivateAbility.CanBeCasted() &&
-                        (MinimumRemnants == 3 || MinimumRemnants < CurrentRemnants))
+                        (MinimumRemnants == 0 || MinimumRemnants < CurrentRemnants))
                     {
                         var castPoint = _ultAbility.FindCastPoint();
                         var speed = MyHero.MovementSpeed * (_ultAbility.GetAbilityData("speed_multiplier") / 100);
@@ -265,6 +265,8 @@ var stacks = stackis?.StackCount;
                         if (remnant == null)
                         {
                             Log.Debug($"Remnant: "+stacks);
+                            _ultAbility.UseAbility(predictedPos);
+                            _ultAbility.UseAbility(predictedPos);
                             _ultAbility.UseAbility(predictedPos);
                             await Await.Delay((int) (time + Game.Ping), tk);
                         }
