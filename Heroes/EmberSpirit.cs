@@ -253,7 +253,7 @@ namespace Zaio.Heroes
                         var time = (castPoint + target.Distance2D(MyHero) / speed) * 1000.0f;
                         var predictedPos = Prediction.Prediction.PredictPosition(target, (int) time);
                         
-var mod = Me.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
+var mod = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
 var stacks = mod?.StackCount;
 
                         // test if we already got a remnant near the enemy
