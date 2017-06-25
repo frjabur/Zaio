@@ -253,8 +253,8 @@ namespace Zaio.Heroes
                         var time = (castPoint + target.Distance2D(MyHero) / speed) * 1000.0f;
                         var predictedPos = Prediction.Prediction.PredictPosition(target, (int) time);
                         
-var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
-var stacks = stackis?.StackCount;
+//var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
+//var stacks = stackis?.StackCount;
 
                         // test if we already got a remnant near the enemy
                         var radius = _ultAbility.GetAbilityData("radius");
@@ -272,7 +272,7 @@ var stacks = stackis?.StackCount;
                         }
                         else
                         {
-                        if (stacks > 0)
+//if (stacks > 0)
                             Log.Debug($"already got a remnant near the enemy PogChamp to approach!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
@@ -310,8 +310,8 @@ var stacks = stackis?.StackCount;
                         var time = (castPoint + target.Distance2D(MyHero) / speed) * 1000.0f;
                         var predictedPos = Prediction.Prediction.PredictPosition(target, (int) time);
                         
- var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
-var stacks = stackis?.StackCount;
+////var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
+//var stacks = stackis?.StackCount;
 
                         // test if we already got a remnant near the enemy
                         var radius = _ultAbility.GetAbilityData("radius");
@@ -319,8 +319,6 @@ var stacks = stackis?.StackCount;
                         if (remnant == null)
                         {
                             Log.Debug($"placing remnant first to kill!");
-                            _ultAbility.UseAbility(predictedPos);
-                            _ultAbility.UseAbility(predictedPos);
                             _ultAbility.UseAbility(predictedPos);
                             await Await.Delay((int) (time + Game.Ping), tk);
                         }
