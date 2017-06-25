@@ -317,10 +317,13 @@ var stacks = stackis?.StackCount;
                         {
                             Log.Debug($"placing remnant first to kill!");
                             _ultAbility.UseAbility(predictedPos);
+                            _ultAbility.UseAbility(predictedPos);
+                            _ultAbility.UseAbility(predictedPos);
                             await Await.Delay((int) (time + Game.Ping), tk);
                         }
                         else
                         {
+                         if (stacks > 0)
                             Log.Debug($"already got a remnant near the enemy PogChamp to kill!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
