@@ -264,7 +264,7 @@ namespace Zaio.Heroes
                         
                         if (remnant == null)
                         {
-                            Log.Debug($"Remnant: "+stackis);
+                            Log.Debug($"placing remnant first to approach!");
                             _ultAbility.UseAbility(predictedPos);
                             _ultAbility.UseAbility(predictedPos);
                             _ultAbility.UseAbility(predictedPos);
