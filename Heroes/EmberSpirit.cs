@@ -324,7 +324,7 @@ namespace Zaio.Heroes
                         }
                         else
                         {
-                         if (stackis > 0)
+                         //if (stackis > 0)
                             Log.Debug($"already got a remnant near the enemy PogChamp to kill!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
