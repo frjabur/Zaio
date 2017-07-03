@@ -253,14 +253,14 @@ namespace Zaio.Heroes
                         var time = (castPoint + target.Distance2D(MyHero) / speed) * 1000.0f;
                         var predictedPos = Prediction.Prediction.PredictPosition(target, (int) time);
                         
-var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
-var stacks = stackis?.StackCount;
+//var stackis = MyHero.FindModifier("modifier_ember_spirit_fire_remnant_charge_counter");
+//var stacks = stackis?.StackCount;
 
                         // test if we already got a remnant near the enemy
                         var radius = _ultAbility.GetAbilityData("radius");
                         var remnant = Remnants.FirstOrDefault(unit => unit.Distance2D(target) < radius);
                         
- if (stacks => 3)
+ //if (stacks => 3)
                         
                         if (remnant == null)
                         {
@@ -272,7 +272,7 @@ var stacks = stackis?.StackCount;
                         }
                         else
                         {
-if (stacks => 3)
+//if (stacks => 3)
                             Log.Debug($"already got a remnant near the enemy PogChamp to approach!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
