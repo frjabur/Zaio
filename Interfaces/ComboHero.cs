@@ -136,7 +136,7 @@ namespace Zaio.Interfaces
             }
         }
 
-        protected float TotalAttackRange => MyHero.GetAttackRange() + MyHero.HullRadius;
+        protected float TotalAttackRange => MyHero.GetAttackRange() + MyHero.GetAttackRange() + MyHero.HullRadius;
 
         public abstract Task ExecuteComboAsync(Unit target, CancellationToken tk = new CancellationToken());
 
