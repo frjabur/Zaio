@@ -206,7 +206,7 @@ namespace Zaio.Interfaces
             Log.Debug($"Attack range {_lastAttackRange}");
             _attackRangeEffect = MyHero.AddParticleEffect(@"particles\ui_mouseactions\drag_selected_ring.vpcf");
             _attackRangeEffect.SetControlPoint(1, new Vector3(255, 0, 0));
-            _attackRangeEffect.SetControlPoint(2, new Vector3(_lastAttackRange, 255, 0));
+            _attackRangeEffect.SetControlPoint(2, new Vector3(_lastAttackRange, 55, 0));
             _attackRangeEffect.SetControlPoint(3, new Vector3(5, 0, 0));
         }
 
