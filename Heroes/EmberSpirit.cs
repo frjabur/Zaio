@@ -262,7 +262,7 @@ namespace Zaio.Heroes
                         
  //if (stacks > 0)
                         
-                        if (remnant == null)
+                        if (remnant == 3)
                         {
                             Log.Debug($"placing remnant first to approach!");
                             _ultAbility.UseAbility(predictedPos);
