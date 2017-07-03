@@ -260,7 +260,7 @@ var stacks = stackis?.StackCount;
                         var radius = _ultAbility.GetAbilityData("radius");
                         var remnant = Remnants.FirstOrDefault(unit => unit.Distance2D(target) < radius);
                         
- if (stacks = 3)
+ if (stacks => 3)
                         
                         if (remnant == null)
                         {
@@ -272,7 +272,7 @@ var stacks = stackis?.StackCount;
                         }
                         else
                         {
-if (stacks = 3)
+if (stacks => 3)
                             Log.Debug($"already got a remnant near the enemy PogChamp to approach!");
                         }
                         _ultActivateAbility.UseAbility(predictedPos);
